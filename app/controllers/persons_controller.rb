@@ -87,15 +87,15 @@ class PersonsController < ApplicationController
         render json: {error: "some error occured"}
     end
     
-    #this route is only for experimentation purpose.
     def exp
-        puts "hellow world"
-        tempPerson = Person.find_by(id:5)
-        puts "the tempperson is #{tempPerson.inspect}"
-        puts "the inside is #{tempPerson.kin.all.inspect}"
-        render json: {data: "working fine"} 
+        begin
+            puts "hellow world"
+            puts view_context.asset_path('jj.txt')
+            render json: {data: Rails.application.config.assets.paths} 
+        rescue
+            render json: {data: 'some exception ho gaya'}
+        end
     end
-
 
     private
     def get_person_with_points_and_relations(source_person_id)
