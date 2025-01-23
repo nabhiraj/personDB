@@ -2,7 +2,7 @@ ARG RUBY_VERSION=3.3.0
 FROM docker.io/library/ruby:$RUBY_VERSION-slim
 ENV BUNDLER_VERSION=2.5.23
 RUN apt-get update -qq && \
-   apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 && \
+   apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 vim && \
    rm -rf /var/lib/apt/lists /var/cache/apt/archives
 RUN apt-get update -qq && \
    apt-get install --no-install-recommends -y build-essential git pkg-config && \
