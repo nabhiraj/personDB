@@ -2,13 +2,15 @@
   "name": "app",
   "private": true,
   "devDependencies": {
-    "esbuild": "^0.24.2"
+    "vite-plugin-ruby": "^5.1.0"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
+    "dev": "vite",
+    "build": "vite build"
   },
   "dependencies": {
-    "esbuild-plugin-vue": "^0.2.4",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^5.0.0",
     "vue": "^3.5.13"
   }
 }
