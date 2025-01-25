@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "persons#expview"
   resources :persons
   resources :points
   resources :jobs
@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   post "/add_relative", to: "persons#create_and_relate"
   post "/assign_relative/:id", to: "persons#relate"
   get "/test", to: "persons#exp" #this endpoint only exist for testing porpose
+  get "/testview", to: "persons#expview"
 end

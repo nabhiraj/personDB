@@ -90,11 +90,15 @@ class PersonsController < ApplicationController
     def exp
         begin
             puts "hellow world"
-            puts view_context.asset_path('jj.txt')
+            puts view_context.asset_url('application.js')
             render json: {data: Rails.application.config.assets.paths} 
         rescue
             render json: {data: 'some exception ho gaya'}
         end
+    end
+
+    def expview
+        puts "simply putting the view infront"
     end
 
     private

@@ -19,5 +19,6 @@ COPY Gemfile Gemfile.lock ./
 RUN bundle check || bundle install
 COPY . ./
 RUN yarn install
-EXPOSE 3000
-ENTRYPOINT ["./entrypoints/docker-entrypoint.sh"]
+ENTRYPOINT ["./bin/dev"]
+#ENTRYPOINT ["/bin/bash"]
+#ENTRYPOINT ["./entrypoints/docker-entrypoint.sh"]

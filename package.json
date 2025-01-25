@@ -8,6 +8,7 @@
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
   },
   "dependencies": {
+    "esbuild-plugin-vue": "^0.2.4",
     "vue": "^3.5.13"
   }
 }
